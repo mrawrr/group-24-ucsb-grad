@@ -1,0 +1,18 @@
+---
+title: "Group 24 UCSB domestic grad enrollment"
+author: "Van Gonzales & Meghna Rao"
+date: "11/16/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+```
+
+```{r}
+# Read in data
+ucsb_grad <- read.csv(here("data", "ucsb_grad_data.csv"))
+```
+
