@@ -1,28 +1,34 @@
 ---
-title: "Group 24 UCSB domestic grad enrollment"
+title: "Group 24 UCSB Domestic Grad Enrollment"
 author: "Van Gonzales & Meghna Rao"
 date: "11/16/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(tidyverse)
 library(here)
 ```
 
 ```{r}
 # Read in data
+
 ucsb_grad <- read.csv(here("data", "ucsb_grad_data.csv"))
 ```
 
 ```{r}
-ggplot(data = ucsb_grad, aes(x = year_abbr, y = domestic_enrollment,
+# Visualize the data
+
+ggplot(data = ucsb_grad, aes(x = year_abbr, 
+                             y = domestic_enrollment,
                              fill = ethnicity)) +
   geom_col(position = "fill") +
-  labs(x = "Year", y = "Proportion of Domestic Graduate Enrollment", 
+  labs(x = "Year", 
+       y = "Proportion of Domestic Graduate Enrollment", 
        title = "Proportion of Domestic Graduate Enrollment at UCSB by Ethnicity (2008 - 2019)",
        fill = "Ethnicity") +
   theme_minimal()
 ```
+<br>
 **Figure 1. UCSB graduate student enrollment by ethnicity (2008-2019).** The proportion of graduate enrollment is shown on the y-axis with 0.00 being 0% enrollment and 1.00 being 100% enrollment. The x-axis show the years to compare the data from year to year. The different colors represent different ethnicities as further described by the legend.
