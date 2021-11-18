@@ -26,7 +26,9 @@ ggplot(data = ucsb_grad, aes(x = year_abbr,
   geom_col(position = "fill") +
   labs(x = "Year", 
        y = "Proportion of Domestic Graduate Enrollment", 
-       title = "Proportion of Domestic Graduate Enrollment at UCSB by Ethnicity (2008 - 2019)",
+       title = "Proportion of Domestic Graduate Enrollment at UCSB by Ethnicity (2008 - 2019)")
+  labs(x = "Year", y = "Proportion of Domestic Graduate Enrollment", 
+       title = "Domestic Graduate Enrollment of UCSB (2008-2019)",
        fill = "Ethnicity") +
   theme_minimal()
 ```
